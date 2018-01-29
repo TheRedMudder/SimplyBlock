@@ -3,6 +3,7 @@ from socketserver import TCPServer
 from urllib.parse import parse_qsl
 from threading import Thread
 #Choose how you want to Process the post data in this function
+port= 80
 def processPostData(post=["No Post Data"]):#Print all post data
     for field in post:
         print(field)
@@ -12,5 +13,5 @@ class PostHandler(SimpleHTTPRequestHandler):
         postData=parse_qsl(self.rfile.read(int(self.headers['Content-Length'])).decode("utf-8"))#Read and Decode Post Data
         Thread(target=processPostData, args=[postData]).start()#Send Post Data to Process
         return SimpleHTTPRequestHandler.do_GET(self) #Handle as no Post Request was given
-print("Go to http://localhost/ if PORT 80 taken change it on the line bellow")
-TCPServer(("", 80), PostHandler).serve_forever()
+print("Go to http://localhost/ if PORT %s  taken change it on the line bellow" %port)
+TCPServer(("", port), PostHandler).serve_forever()

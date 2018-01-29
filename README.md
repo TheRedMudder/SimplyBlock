@@ -3,7 +3,11 @@
 <img align="right" src="https://i.imgur.com/BeS5rfh.png" width=15%>
 
 # SimplyBlock
-SimplyBlock is a simple Blockchain project that stores randomly generated user transactions into blocks. It only uses the built-in python modules. 
+A simple Blockchain project that stores randomly generated user transactions into blocks. It only uses the built-in python modules.
+
+
+<p align="center"><img src="https://i.imgur.com/ViTkmTv.png" width=95%></p>
+
 ## Getting Started
 
 * Download [Python 3](https://www.python.org/downloads/)
@@ -46,4 +50,9 @@ print(simplyChain)
 Verify Transaction(returns True if Valid, False if Invalid)
 ```python
 verifyTransaction(transaction, userAccount)
+```
+
+Running blockServer
+```python
+python blockServer.py
 ```
